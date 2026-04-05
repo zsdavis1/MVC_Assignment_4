@@ -58,6 +58,28 @@ public class ProductMap {
         }
     }
 
+    public boolean updateProductQuantity(String productId, int desiredQuantity) {
+        if (productId == null || productId.length() < 2 || productId.charAt(0) != 'p') {
+            return false;
+        }
+
+        int currentQuantity = getProductQuantity(productId);
+
+        if (currentQuantity == -1 || currentQuantity < desiredQuantity) {
+            return false;
+        }
+
+        int productIdInt = Integer.parseInt(productId.substring(1));
+        String[] item = products.get(productIdInt);
+
+        if (item == null) {
+            return false;
+        }
+
+        item[2] = Integer.toString(currentQuantity - desiredQuantity);
+        return true;
+    }
+
     public int getProductCount() {
         return products.size();
     }
