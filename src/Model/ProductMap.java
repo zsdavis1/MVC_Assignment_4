@@ -12,14 +12,28 @@ public class ProductMap {
         increment = 1;
     }
 
-    public boolean addProduct(String productID, String productName, String productQuantity) {
+    public boolean addProduct(String productName, String productPrice, String productQuantity) {
         try {
-            Product product = new Product(productID, productName, productQuantity);
-            products.put(increment, new String[] {productID, productName, productQuantity});
+            Product product = new Product(productName, productPrice, productQuantity);
+            products.put(increment, new String[] {productName, productPrice, productQuantity});
             increment++;
             return true;
         }
         catch (IllegalArgumentException e) {
+            return false;
+        }
+    }
+
+    public boolean productExists(String productId) {
+        if (productId == null || productId.length() < 2 || productId.charAt(0) != 'p') {
+            return false;
+        }
+
+        try {
+            int productIdInt = Integer.parseInt(productId.substring(1));
+            return products.containsKey(productIdInt);
+        }
+        catch (NumberFormatException e) {
             return false;
         }
     }
@@ -31,5 +45,4 @@ public class ProductMap {
     public HashMap<Integer, String[]> getProducts() {
         return new HashMap<>(products);
     }
-
 }
