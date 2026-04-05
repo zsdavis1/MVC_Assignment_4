@@ -1,4 +1,4 @@
-package Model;
+package Model.Customer;
 
 import java.util.HashMap;
 

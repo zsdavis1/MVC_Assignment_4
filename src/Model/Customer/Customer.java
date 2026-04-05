@@ -1,4 +1,4 @@
-package Model;
+package Model.Customer;
 
 public class Customer {
     private final String name;

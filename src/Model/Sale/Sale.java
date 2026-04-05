@@ -1,4 +1,4 @@
-package Model;
+package Model.Sale;
 
 public class Sale {
     private final String customerId;
