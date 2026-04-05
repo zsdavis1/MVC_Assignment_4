@@ -1,8 +1,5 @@
 package Model;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Customer {
     private final String name;
     private final String email;
