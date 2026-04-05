@@ -80,6 +80,30 @@ public class ProductMap {
         return true;
     }
 
+    public double getProductPrice(String productId) {
+        if (productId == null || productId.length() < 2 || productId.charAt(0) != 'p') {
+            return -1;
+        }
+
+        if (!productExists(productId)) {
+            return -1;
+        }
+
+        int productIdInt = Integer.parseInt(productId.substring(1));
+        String[] item = products.get(productIdInt);
+
+        if (item == null) {
+            return -1;
+        }
+
+        try {
+            return Double.parseDouble(item[1]);
+        }
+        catch (NumberFormatException e) {
+            return -1;
+        }
+    }
+
     public int getProductCount() {
         return products.size();
     }
