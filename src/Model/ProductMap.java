@@ -38,6 +38,26 @@ public class ProductMap {
         }
     }
 
+    public int getProductQuantity(String productId) {
+        if (productId == null || productId.length() < 2 || productId.charAt(0) != 'p') {
+            return -1;
+        }
+
+        try {
+            int productIdInt = Integer.parseInt(productId.substring(1));
+            String[] item = products.get(productIdInt);
+
+            if (item == null) {
+                return -1;
+            }
+
+            return Integer.parseInt(item[2]);
+        }
+        catch (NumberFormatException e) {
+            return -1;
+        }
+    }
+
     public int getProductCount() {
         return products.size();
     }
