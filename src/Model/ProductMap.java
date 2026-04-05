@@ -12,6 +12,18 @@ public class ProductMap {
         increment = 1;
     }
 
+    public boolean addProduct(String productID, String productName, String productQuantity) {
+        try {
+            Product product = new Product(productID, productName, productQuantity);
+            products.put(increment, new String[] {productID, productName, productQuantity});
+            increment++;
+            return true;
+        }
+        catch (IllegalArgumentException e) {
+            return false;
+        }
+    }
+
     public int getProductCount() {
         return products.size();
     }
