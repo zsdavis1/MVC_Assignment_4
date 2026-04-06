@@ -1,7 +1,7 @@
 package Model.Sale;
 
 public class Sale {
-    private String saleId;
+    private final String saleId;
     private final String customerId;
     private final String productId;
     private final int quantity;
@@ -16,6 +16,10 @@ public class Sale {
         this.customerId = customerId;
         this.productId = productId;
         this.quantity = quantity;
+    }
+
+    public String getSaleId() {
+        return saleId;
     }
 
     public String getCustomerId() {
