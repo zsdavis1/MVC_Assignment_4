@@ -40,4 +40,8 @@ public class SaleList {
             return false;
         }
     }
+
+    public ArrayList<Sale> getSales() {
+        return new ArrayList<>(sales);
+    }
 }
