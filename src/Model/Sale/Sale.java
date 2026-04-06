@@ -1,11 +1,10 @@
 package Model.Sale;
 
 public class Sale {
-    private final String saleId;
+    private String saleId;
     private final String customerId;
     private final String productId;
     private final int quantity;
-    private double total;
 
     public Sale (String saleId, String customerId, String productId, int quantity) {
         if (customerId == null || customerId.isEmpty() || productId == null || productId.isEmpty()
@@ -13,6 +12,7 @@ public class Sale {
             throw new IllegalArgumentException("Invalid sale data.");
         }
 
+        this.saleId = saleId;
         this.customerId = customerId;
         this.productId = productId;
         this.quantity = quantity;
@@ -22,7 +22,7 @@ public class Sale {
         return customerId;
     }
 
-    public String getCustomerName() {
+    public String getProductId() {
         return productId;
     }
 

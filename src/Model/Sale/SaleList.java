@@ -7,8 +7,8 @@ import java.util.ArrayList;
 
 public class SaleList {
     private final ArrayList<Sale> sales;
-    private CustomerMap customers;
-    private ProductMap products;
+    private final CustomerMap customers;
+    private final ProductMap products;
     private int increment;
 
     public SaleList(CustomerMap customers, ProductMap products) {
@@ -30,9 +30,14 @@ public class SaleList {
 
         String saleId = "s" + increment;
 
-        Sale sale = new Sale(saleId, customerId, productId, quantity);
-        sales.add(sale);
-
-        return true;
+        try {
+            Sale sale = new Sale(saleId, customerId, productId, quantity);
+            sales.add(sale);
+            increment++;
+            return true;
+        }
+        catch (IllegalArgumentException e) {
+            return false;
+        }
     }
 }
