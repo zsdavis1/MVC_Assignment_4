@@ -34,4 +34,21 @@ public class CornerStoreController {
     public HashMap<Integer, String []> getCustomers() {
         return customers.getCustomers();
     }
+
+    // Product specific methods
+    public boolean addProduct(String name, String price, String quantity) {
+        return products.addProduct(name, price, quantity);
+    }
+
+    public boolean productExists(String productId) {
+        return products.productExists(productId);
+    }
+
+    public int getProductCount() {
+        return products.getProductCount();
+    }
+
+    public HashMap<Integer, String[]> getProducts() {
+        return products.getProducts();
+    }
 }
