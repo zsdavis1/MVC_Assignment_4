@@ -1,5 +1,8 @@
 package Model.Sale;
 
+import Model.Product.Product;
+import Model.Product.ProductMap;
+
 public class Sale {
     private final String saleId;
     private final String customerId;
@@ -32,5 +35,10 @@ public class Sale {
 
     public int getQuantity() {
         return quantity;
+    }
+
+    public double getTotal(ProductMap products) {
+        double price = products.getProductPrice(productId);
+        return price * quantity;
     }
 }
