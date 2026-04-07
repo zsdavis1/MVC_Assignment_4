@@ -1,10 +1,11 @@
 package Controller;
 
-import Model.Customer.Customer;
 import Model.Customer.CustomerMap;
 import Model.Product.ProductMap;
+import Model.Sale.Sale;
 import Model.Sale.SaleList;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class CornerStoreController {
@@ -50,5 +51,14 @@ public class CornerStoreController {
 
     public HashMap<Integer, String[]> getProducts() {
         return products.getProducts();
+    }
+
+    // Sale specific methods
+    public boolean addSale(String customerId, String productId, int quantity) {
+        return sales.addSale(customerId, productId, quantity);
+    }
+
+    public ArrayList<Sale> getSales() {
+        return sales.getSales();
     }
 }
