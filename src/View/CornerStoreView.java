@@ -12,4 +12,14 @@ public class CornerStoreView {
         this.controller = new CornerStoreController();
         this.scanner = new Scanner(System.in);
     }
+
+    private void printMainMenu() {
+        System.out.println("\nThe Corner Store");
+        System.out.println("1. List all products");
+        System.out.println("2. Process a new sale");
+        System.out.println("3. View all sales");
+        System.out.println("4. Add a new product");
+        System.out.println("5. Exit");
+        System.out.print("Please select an option: ");
+    }
 }
