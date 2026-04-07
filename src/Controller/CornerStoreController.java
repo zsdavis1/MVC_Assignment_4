@@ -17,6 +17,17 @@ public class CornerStoreController {
         this.customers = new CustomerMap();
         this.products = new ProductMap();
         this.sales = new SaleList(customers, products);
+
+        // ADDING PRE-FILLED INFORMATION
+        // Matches the original, monolithic code
+        customers.addCustomer("Alice", "alice@example.com");
+        customers.addCustomer("Bob", "bob@example.com");
+        customers.addCustomer("Charlie", "charlie@example.com");
+
+        products.addProduct("Laptop", "1200.00", "10");
+        products.addProduct("Mouse", "25.50", "50");
+        products.addProduct("Keyboard", "75.00", "30");
+        products.addProduct("Monitor", "300.75", "20");
     }
 
     // Customer specific methods
