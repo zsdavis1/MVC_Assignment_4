@@ -72,4 +72,9 @@ public class CornerStoreController {
     public ArrayList<Sale> getSales() {
         return sales.getSales();
     }
+
+    public double getSaleTotal(String productId, int quantity) {
+        double price = products.getProductPrice(productId);
+        return price * quantity;
+    }
 }
